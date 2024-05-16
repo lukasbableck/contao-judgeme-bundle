@@ -16,7 +16,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['judgemeLimit'] = [
 ];
 $GLOBALS['TL_DCA']['tl_content']['fields']['productPage'] = [
 	'exclude' => true,
-	'inputType' => 'url',
-	'eval' => ['tl_class' => 'w50', 'mandatory' => false],
+	'inputType' => 'text',
+	'eval' => ['tl_class' => 'w50', 'mandatory' => false, 'rgxp' => 'url'],
 	'sql' => "varchar(255) NOT NULL default ''",
 ];

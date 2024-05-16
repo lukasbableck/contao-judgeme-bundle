@@ -30,7 +30,7 @@ $this->extend('block_unsearchable'); ?>
 <?php
 if ($this->productPage) {
 	?>
-	<a href="<?= $this->productPage; ?>#judgeme_product_reviews" class="write-review"><?= $GLOBALS['TL_LANG']['MSC']['judgeme']['writeReview']; ?></a>
+	<a href="<?= $this->productPage; ?>#judgeme_product_reviews" class="write-review" target="_blank" rel="noopener"><?= $GLOBALS['TL_LANG']['MSC']['judgeme']['writeReview']; ?></a>
 	<?php
 }
 
