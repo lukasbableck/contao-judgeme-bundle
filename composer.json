@@ -6,7 +6,11 @@
 		"contao",
 		"judgeme",
 		"reviews",
-		"shopify"
+		"shopify",
+		"bewertungen",
+		"produkte",
+		"products",
+		"integration"
 	],
 	"require": {
 		"contao/core-bundle": "^4.13 || ^5.0"
