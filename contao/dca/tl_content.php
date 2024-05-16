@@ -1,6 +1,6 @@
 <?php
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['judgeme_reviews_element'] = '{type_legend},type,headline;{judgeme_legend},judgemeId,judgemeLimit,productPage;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['judgeme_reviews_element'] = '{type_legend},type,headline;{judgeme_legend},judgemeId,judgemeLimit,productPage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['judgemeId'] = [
 	'exclude' => true,
