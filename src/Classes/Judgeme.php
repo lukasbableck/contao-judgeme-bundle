@@ -29,6 +29,9 @@ class Judgeme {
 		}
 
 		return array_filter($reviews, function ($review) use ($id) {
+			if (!$review->published || $review->hidden) {
+				return false;
+			}
 			return $review->product_external_id == $id;
 		});
 	}
