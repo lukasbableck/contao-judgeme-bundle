@@ -32,6 +32,7 @@ class Judgeme {
 			if (!$review->published || $review->hidden) {
 				return false;
 			}
+
 			return $review->product_external_id == $id;
 		});
 	}
