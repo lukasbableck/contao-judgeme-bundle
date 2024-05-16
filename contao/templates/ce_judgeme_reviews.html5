@@ -1,0 +1,74 @@
+<?php
+
+use Contao\Config;
+use Contao\Date;
+
+$this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<div class="review-summary">
+	<div class="stars">
+		<?php
+		for ($i = 1; $i <= 5; ++$i) {
+			if ($i <= $this->average) {
+				echo '&#9733;';
+			} else {
+				echo '&#9734;';
+			}
+		}
+?>
+	</div>
+	<div class="average">
+		<?= $this->averageRating; ?> <?= $GLOBALS['TL_LANG']['MSC']['judgeme']['average']; ?>
+	</div>
+	<div class="count">
+		<?= $this->totalReviews; ?> <?= $GLOBALS['TL_LANG']['MSC']['judgeme']['total']; ?>
+	</div>
+</div>
+
+<?php
+if ($this->productPage) {
+	?>
+	<a href="<?= $this->productPage; ?>#judgeme_product_reviews" class="write-review"><?= $GLOBALS['TL_LANG']['MSC']['judgeme']['writeReview']; ?></a>
+	<?php
+}
+
+if (!empty($this->reviews)) {
+	$i = 1;
+	foreach ($this->reviews as $review) {
+		if ($i >= $this->judgemeLimit) {
+			break;
+		}
+		if (!$review['published'] || $review['hidden']) {
+			continue;
+		}
+		?>
+		<div class="review">
+			<div class="stars">
+				<?php
+				for ($i = 1; $i <= 5; ++$i) {
+					if ($i <= $review['rating']) {
+						echo '&#9733;';
+					} else {
+						echo '&#9734;';
+					}
+				}
+		?>
+			</div>
+			<div class="author"><?= $review['reviewer']['name']; ?></div>
+			<div class="date"><?= Date::parse(Config::get('dateFormat'), strtotime($review['created_at'])); ?></div>
+			<div class="title"><?= $review['title']; ?></div>
+			<div class="body"><?= $review['body']; ?></div>
+		</div>
+		<?php
+		++$i;
+	}
+} else {
+	?>
+	<p class="empty"><?= $this->empty; ?></p>
+	<?php
+}
+?>
+
+<?php $this->endblock(); ?>
