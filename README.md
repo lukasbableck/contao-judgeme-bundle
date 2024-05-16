@@ -1,7 +1,7 @@
 # Contao Judge.me Bundle
 
-This bundle provides a simple integration of the Judge.me review system into Contao.
-It does not use the JS script provided by Judge.me, but instead uses the API to fetch the reviews and display them in a custom way.
+This bundle provides a simple integration of the Judge.me review system into Contao.\
+It does not use the JS script provided by Judge.me, but instead uses the API to fetch the reviews and display them in a custom way.\
 Because of that it also does not require the Awesome plan, but the free plan is sufficient.
 
 ## Compatibility
