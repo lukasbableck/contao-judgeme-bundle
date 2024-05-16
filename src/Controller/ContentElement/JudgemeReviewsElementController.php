@@ -16,6 +16,10 @@ class JudgemeReviewsElementController extends AbstractContentElementController {
 		$pageModel = $this->getPageModel();
 		$rootPageModel = PageModel::findByPk($pageModel->rootId);
 
+		if(!$rootPageModel->judgemeShopdomain || !$rootPageModel->judgemePrivateKey) {
+			return new Response();
+		}
+
 		$template->reviews = Judgeme::getJudgemeReviews($model->judgemeId, $rootPageModel);
 		$template->averageRating = $template->reviews ? array_sum(array_column($template->reviews, 'rating')) / \count($template->reviews) : 0;
 		$template->totalReviews = $template->reviews ? \count($template->reviews) : 0;

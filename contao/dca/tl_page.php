@@ -5,19 +5,19 @@ use Contao\CoreBundle\DataContainer\PaletteManipulator;
 $GLOBALS['TL_DCA']['tl_page']['fields']['judgemePrivateKey'] = [
 	'exclude' => true,
 	'inputType' => 'text',
-	'eval' => ['tl_class' => 'w50', 'mandatory' => true],
+	'eval' => ['tl_class' => 'w50', 'mandatory' => false],
 	'sql' => "varchar(255) NOT NULL default ''",
 ];
 $GLOBALS['TL_DCA']['tl_page']['fields']['judgemePublicKey'] = [
 	'exclude' => true,
 	'inputType' => 'text',
-	'eval' => ['tl_class' => 'w50', 'mandatory' => true],
+	'eval' => ['tl_class' => 'w50', 'mandatory' => false],
 	'sql' => "varchar(255) NOT NULL default ''",
 ];
 $GLOBALS['TL_DCA']['tl_page']['fields']['judgemeShopdomain'] = [
 	'exclude' => true,
 	'inputType' => 'text',
-	'eval' => ['tl_class' => 'w50', 'mandatory' => true],
+	'eval' => ['tl_class' => 'w50', 'mandatory' => false],
 	'sql' => "varchar(255) NOT NULL default ''",
 ];
 
