@@ -11,7 +11,7 @@ $this->extend('block_unsearchable'); ?>
 	<div class="stars">
 		<?php
 		for ($i = 1; $i <= 5; ++$i) {
-			if ($i <= $this->average) {
+			if ($i <= $this->averageRating) {
 				echo '&#9733;';
 			} else {
 				echo '&#9734;';
@@ -37,10 +37,10 @@ if ($this->productPage) {
 if (!empty($this->reviews)) {
 	$i = 1;
 	foreach ($this->reviews as $review) {
-		if ($i >= $this->judgemeLimit) {
+		if ('' != $this->judgemeLimit && $i >= $this->judgemeLimit) {
 			break;
 		}
-		if (!$review['published'] || $review['hidden']) {
+		if (!$review->published || $review->hidden) {
 			continue;
 		}
 		?>
@@ -48,7 +48,7 @@ if (!empty($this->reviews)) {
 			<div class="stars">
 				<?php
 				for ($i = 1; $i <= 5; ++$i) {
-					if ($i <= $review['rating']) {
+					if ($i <= $review->rating) {
 						echo '&#9733;';
 					} else {
 						echo '&#9734;';
@@ -56,10 +56,10 @@ if (!empty($this->reviews)) {
 				}
 		?>
 			</div>
-			<div class="author"><?= $review['reviewer']['name']; ?></div>
-			<div class="date"><?= Date::parse(Config::get('dateFormat'), strtotime($review['created_at'])); ?></div>
-			<div class="title"><?= $review['title']; ?></div>
-			<div class="body"><?= $review['body']; ?></div>
+			<div class="author"><?= $review->reviewer->name; ?></div>
+			<div class="date"><?= Date::parse(Config::get('dateFormat'), strtotime($review->created_at)); ?></div>
+			<div class="title"><?= $review->title; ?></div>
+			<div class="body"><?= $review->body; ?></div>
 		</div>
 		<?php
 		++$i;
