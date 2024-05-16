@@ -22,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['judgemeShopdomain'] = [
 ];
 
 PaletteManipulator::create()
-	->addLegend('judgeme_legend', 'chmod', PaletteManipulator::POSITION_AFTER)
+	->addLegend('judgeme_legend', 'chmod_legend', PaletteManipulator::POSITION_AFTER)
 	->addField('judgemePrivateKey', 'judgeme_legend', PaletteManipulator::POSITION_APPEND)
 	->addField('judgemePublicKey', 'judgeme_legend', PaletteManipulator::POSITION_APPEND)
 	->addField('judgemeShopdomain', 'judgeme_legend', PaletteManipulator::POSITION_APPEND)
