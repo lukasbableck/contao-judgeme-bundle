@@ -1,5 +1,5 @@
 <?php
-namespace Lukasbableck\ContaoRecurringElementBundle\ContaoManager;
+namespace Lukasbableck\ContaoJudgemeBundle\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
